@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Shippori+Mincho:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --font-primary: #252525;
+  --font-secondary: #aaaaaa;
+  --bg-primary: #ffffff;
+  --bg-secondary: #fafafa;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --font-primary: #ffffff;
+    --bg-primary: #252525;
+    --bg-secondary: #353535;
+  }
+}
+
+body {
+  color: var(--font-primary);
+  background: var(--bg-primary);
+  margin: 0;
+  padding: 0;
+}
+h1, h2, h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+}
