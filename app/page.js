@@ -1,63 +1,7 @@
 import Image from "next/image";
-import workList from "@/components/lists";
+import { workList, mojiList, authorList } from "@/components/lists";
 
 import { FaArrowRight } from "react-icons/fa";
-
-const mojiList = [
-  {
-    title: "もじをあじわう",
-    tag: "ajiwau",
-    desc: "はじめに、文字をじっくり読んで観賞できるサイトを紹介します。どのサイトも、ディスプレイ上に言葉が丁寧に盛り付けられており、文字の美しさや、優しさを感じられるようなものばかりです。",
-  },
-  {
-    title: "もじをたのしむ",
-    tag: "tanoshimu",
-    desc: "お次は文字とグラフィックの組み合わせを楽しめるサイトをご紹介します。写真や装飾、ページの展開など、様々なアプローチが試みられて、どのサイトもそれぞれ作者の個性が際立っています。まるでファッションショーに来たかのような気分でお楽しみください。",
-  },
-  {
-    title: "もじとあそぶ",
-    tag: "asobu",
-    desc: "ここまでのものとはまた違った、インターフェースを使ったサイトをご紹介します。宇宙を漂ったり、実世界を歩いたり、文字を掴んだり、車窓を眺めたり、夜を待ったり、文字と交流する方法は違います。夢中で遊んでいると、文字の普段と違う顔も見られるかも。",
-  },
-  {
-    title: "もじとおどる",
-    tag: "odoru",
-    desc: "最後に、タイポグラフィに参加できるサイトを紹介します。Webというダンスホールに繰り出すことで、 文字と踊るような体験ができます。ノリ方は貴方次第です。何を踊るのかは入場するまでわかりません。 パーティーが終わったら、自分の踊りをシェアしてみるのもいいかも。",
-  },
-];
-
-const authorList = [
-  {
-    name: "今泉 えみり",
-    respnsibility: "表紙デザイン",
-    link: "",
-  },
-  {
-    name: "魚田 真之介",
-    respnsibility: "扉ページ文",
-    link: "@fallfish56",
-  },
-  {
-    name: "小林 優芽",
-    respnsibility: "表紙・扉ページデザイン",
-    link: "",
-  },
-  {
-    name: "坂村 空介",
-    respnsibility: "組版・座談会編集",
-    link: "@menma275",
-  },
-  {
-    name: "長久保 有香",
-    respnsibility: "レイアウトデザイン",
-    link: "@nagayuka_a",
-  },
-  {
-    name: "杉本 達應",
-    respnsibility: "編集長",
-    link: "",
-  },
-];
 
 export default function Home() {
   return (
@@ -108,12 +52,12 @@ export default function Home() {
           </div>
         </div>
         <div>
-          {mojiList.map((moji, index) => (
-            <div className="pt-5 pb-2 mt-0 border-0 border-[var(--font-primary)]">
-              <h3
-                key={index}
-                className="text-sm w-fit h-fit mb-3 px-3 py-1 text-[var(--bg-primary)] bg-[var(--font-primary)] "
-              >
+          {mojiList.map((moji) => (
+            <div
+              key={moji.title}
+              className="pt-5 pb-2 mt-0 border-0 border-[var(--font-primary)]"
+            >
+              <h3 className="text-sm w-fit h-fit mb-3 px-3 py-1 text-[var(--bg-primary)] bg-[var(--font-primary)] ">
                 {moji.title}
               </h3>
               <p className="text-sm w-full md:w-2/3">{moji.desc}</p>
@@ -124,9 +68,9 @@ export default function Home() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-5">
                   {workList
                     .filter((work) => work.tag === moji.tag)
-                    .map((work, index) => (
+                    .map((work) => (
                       <a
-                        key={index}
+                        key={work.author}
                         className="group bg-[var(--bg-primary)] rounded-md overflow-hidden border border-[var(--bg-secondary)] hover:border-[var(--font-primary)] transition-all duration-75"
                         href={work.path}
                       >
@@ -160,8 +104,8 @@ export default function Home() {
               </p>
             </div>
             <div className="text-xs">
-              {authorList.map((author, index) => (
-                <div key={index} className="flex justify-between py-2">
+              {authorList.map((author) => (
+                <div key={author.name} className="flex justify-between py-2">
                   <p className="text-[var(--font-secondary)]">
                     {author.respnsibility}
                   </p>
