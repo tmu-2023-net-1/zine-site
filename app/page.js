@@ -4,7 +4,6 @@ import { workList, mojiList, shopList, authorList } from "@/components/lists";
 import { FaArrowRight, FaArrowUp } from "react-icons/fa";
 import { FiArrowUpRight, FiArrowUpLeft } from "react-icons/fi";
 import { FaXTwitter, FaInstagram, FaLink } from "react-icons/fa6";
-import { background } from "@chakra-ui/react";
 
 export default function Home() {
   return (
@@ -133,16 +132,17 @@ export default function Home() {
                   <p className="text-[var(--font-secondary)]">
                     {author.respnsibility}
                   </p>
-                  <div className="p-1">
-                    {author.link ? (
-                      <a href={author.link} className="flex flex-row gap-1">
-                        <FaLink className="my-auto text-[var(--font-secondary)]" />
-                        {author.name}
-                      </a>
-                    ) : (
-                      <p className="">{author.name}</p>
-                    )}
-                  </div>
+                  {author.link ? (
+                    <a
+                      href={author.link}
+                      className="flex flex-row gap-1 border-b border-[var(--font-secondary)]"
+                    >
+                      <FaLink className="my-auto text-[var(--font-secondary)]" />
+                      {author.name}
+                    </a>
+                  ) : (
+                    <p className="">{author.name}</p>
+                  )}
                 </div>
               ))}
             </div>
