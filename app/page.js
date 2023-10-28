@@ -9,14 +9,14 @@ export default function Home() {
   return (
     <main className="max-w-screen-xl mx-auto px-4 text-base">
       {/* トースター */}
-      <div className="fixed right-5 bottom-5">
+      {/* <div className="fixed right-5 bottom-5">
         <a href="/">
           <div className="group flex flex-row gap-2 px-4 py-2 rounded-xl text-white bg-green-500">
             <p>購入する</p>
             <FaArrowRight className="my-auto group-hover:translate-x-1/4 transition-all duration-150" />
           </div>
         </a>
-      </div>
+      </div> */}
       <div className="grid grid-cols-1 sm:grid-cols-2 px-5 pb-10 pt-16 gap-7 ">
         <div className="my-auto mx-auto">
           <h2 className="text-sm text-[var(--font-secondary)]">
