@@ -164,6 +164,27 @@ const mojiList = [
   },
 ];
 
+const shopList = [
+  {
+    title: "技術書典",
+    desc: "紙版・電子版",
+    link: "",
+    color: "#67AD5B",
+  },
+  {
+    title: "BOOTH",
+    desc: "電子版のみ",
+    link: "",
+    color: "#E95B57",
+  },
+  {
+    title: "Amazon",
+    desc: "電子版のみ",
+    link: "",
+    color: "#F7C948",
+  },
+];
+
 const authorList = [
   {
     name: "今泉 えみり",
@@ -173,7 +194,7 @@ const authorList = [
   {
     name: "魚田 真之介",
     respnsibility: "扉ページ文",
-    link: "@fallfish56",
+    link: "https://twitter.com/fallfish56",
   },
   {
     name: "小林 優芽",
@@ -183,12 +204,12 @@ const authorList = [
   {
     name: "坂村 空介",
     respnsibility: "組版・座談会編集",
-    link: "@menma275",
+    link: "https://www.sakamura.dev/",
   },
   {
     name: "長久保 有香",
     respnsibility: "レイアウトデザイン",
-    link: "@nagayuka_a",
+    link: "https://www.instagram.com/nagayuka_a/",
   },
   {
     name: "杉本 達應",
@@ -197,4 +218,4 @@ const authorList = [
   },
 ];
 
-export { workList, mojiList, authorList };
+export { workList, mojiList, shopList, authorList };

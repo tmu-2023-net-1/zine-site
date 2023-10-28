@@ -1,11 +1,14 @@
 import Image from "next/image";
-import { workList, mojiList, authorList } from "@/components/lists";
+import { workList, mojiList, shopList, authorList } from "@/components/lists";
 
-import { FaArrowRight } from "react-icons/fa";
+import { FaArrowRight, FaArrowUp } from "react-icons/fa";
+import { FiArrowUpRight, FiArrowUpLeft } from "react-icons/fi";
+import { FaXTwitter, FaInstagram, FaLink } from "react-icons/fa6";
+import { background } from "@chakra-ui/react";
 
 export default function Home() {
   return (
-    <main className="max-w-screen-xl mx-auto px-3 text-base">
+    <main className="max-w-screen-xl mx-auto px-4 text-base">
       {/* トースター */}
       <div className="fixed right-5 bottom-5">
         <a href="/">
@@ -32,8 +35,28 @@ export default function Home() {
           <Image src="/img/cover.png" alt="cover" width={325} height={325} />
         </div>
       </div>
+      {/* 販売ページ */}
+      <div className="my-5 grid grid-cols-1 md:grid-cols-2 gap-3 p-7 bg-[var(--bg-secondary)] rounded-xl">
+        <h1 className="text-xl font-bold my-auto">Shop</h1>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          {shopList.map((shop) => (
+            <a
+              key={shop.title}
+              className={"group p-3 rounded-md flex justify-between"}
+              style={{ background: shop.color }}
+              href={shop.link}
+            >
+              <div>
+                <h3 className="text-md mb-1 text-white">{shop.title}</h3>
+                <p className="text-xs text-white">{shop.desc}</p>
+              </div>
+              <FiArrowUpRight className="text-white text-lg group-hover:translate-x-1/4 group-hover:-translate-y-1/4 transition-all duration-150" />
+            </a>
+          ))}
+        </div>
+      </div>
       {/* アバウト */}
-      <div className="my-5 grid grid-cols-1 md:grid-cols-2 gap-3 p-5 bg-[var(--bg-secondary)] rounded-xl">
+      <div className="my-5 grid grid-cols-1 md:grid-cols-2 gap-3 p-7 bg-[var(--bg-secondary)] rounded-xl">
         <h1 className="text-xl font-bold my-auto">About</h1>
         <div className="">
           <p className="text-sm">
@@ -42,7 +65,7 @@ export default function Home() {
         </div>
       </div>
       {/* コンテンツ */}
-      <div className="my-5 p-5 bg-[var(--bg-secondary)] rounded-xl">
+      <div className="my-5 p-7 bg-[var(--bg-secondary)] rounded-xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3 ">
           <h1 className="text-xl font-bold pb-3">Contents</h1>
           <div className="">
@@ -71,6 +94,7 @@ export default function Home() {
                     .map((work) => (
                       <a
                         key={work.author}
+                        target="_blank"
                         className="group bg-[var(--bg-primary)] rounded-md overflow-hidden border border-[var(--bg-secondary)] hover:border-[var(--font-primary)] transition-all duration-75"
                         href={work.path}
                       >
@@ -94,7 +118,7 @@ export default function Home() {
       </div>
       {/* Author */}
       <div className="my-5">
-        <div className="bg-[var(--bg-secondary)] p-6 rounded-xl">
+        <div className="bg-[var(--bg-secondary)] p-7 rounded-xl">
           <h1 className="text-xl font-bold mb-5">Author</h1>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 ">
             <div>
@@ -109,7 +133,16 @@ export default function Home() {
                   <p className="text-[var(--font-secondary)]">
                     {author.respnsibility}
                   </p>
-                  <p>{author.name}</p>
+                  <div className="p-1">
+                    {author.link ? (
+                      <a href={author.link} className="flex flex-row gap-1">
+                        <FaLink className="my-auto text-[var(--font-secondary)]" />
+                        {author.name}
+                      </a>
+                    ) : (
+                      <p className="">{author.name}</p>
+                    )}
+                  </div>
                 </div>
               ))}
             </div>
