@@ -46,7 +46,9 @@ export default function Home() {
               href={shop.link}
             >
               <div>
-                <h3 className="text-md mb-1 text-white">{shop.title}</h3>
+                <h3 className="text-md font-medium mb-1 text-white">
+                  {shop.title}
+                </h3>
                 <p className="text-xs text-white">{shop.desc}</p>
               </div>
               <FiArrowUpRight className="text-white text-lg group-hover:translate-x-1/4 group-hover:-translate-y-1/4 transition-all duration-150" />
@@ -58,31 +60,26 @@ export default function Home() {
       <div className="my-5 grid grid-cols-1 md:grid-cols-2 gap-3 p-7 bg-[var(--bg-secondary)] rounded-xl">
         <h1 className="text-xl font-bold my-auto">About</h1>
         <div className="">
-          <p className="text-sm">
+          <p className="text-sm sm:text-base leading-6">
             説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト
           </p>
         </div>
       </div>
       {/* コンテンツ */}
       <div className="my-5 p-7 bg-[var(--bg-secondary)] rounded-xl">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 ">
-          <h1 className="text-xl font-bold pb-3">Contents</h1>
-          <div className="">
-            {/* <p className="text-sm mb-5">
-              説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト
-            </p> */}
-          </div>
-        </div>
+        <h1 className="text-xl font-bold">Contents</h1>
         <div>
           {mojiList.map((moji) => (
             <div
               key={moji.title}
-              className="pt-5 pb-2 mt-0 border-0 border-[var(--font-primary)]"
+              className="pt-3 pb-2 mt-0 border-0 border-[var(--font-primary)]"
             >
               <h3 className="text-sm w-fit h-fit mb-3 px-3 py-1 text-[var(--bg-primary)] bg-[var(--font-primary)] ">
                 {moji.title}
               </h3>
-              <p className="text-sm w-full md:w-2/3">{moji.desc}</p>
+              <p className="text-sm sm:text-base  w-full leading-6 md:w-2/3">
+                {moji.desc}
+              </p>
               <details>
                 <summary className="text-xs my-3 px-3 py-1 text-[var(--font-secondary)] cursor-pointer">
                   収録作品を見る
@@ -122,7 +119,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 ">
             <div>
               <h1 className="text-md">すぎもと組について</h1>
-              <p className="mt-3 text-sm">
+              <p className="mt-3 text-sm sm:text-base  leading-6">
                 説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト
               </p>
             </div>
