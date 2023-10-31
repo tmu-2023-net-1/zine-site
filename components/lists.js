@@ -168,20 +168,23 @@ const shopList = [
   {
     title: "技術書典",
     desc: "紙版・電子版",
-    link: "",
+    link: "https://techbookfest.org/product/7V0Tkg5WKFrgwGHvGgfBjd",
     color: "#67AD5B",
+    isAble: true,
   },
   {
     title: "BOOTH",
     desc: "電子版のみ",
     link: "",
     color: "#E95B57",
+    isAble: false,
   },
   {
     title: "Amazon",
     desc: "電子版のみ",
     link: "",
     color: "#F7C948",
+    isAble: false,
   },
 ];
 

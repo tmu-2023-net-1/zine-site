@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { workList, mojiList, shopList, authorList } from "@/components/lists";
 
+import maru_su from "@/public/img/maru_su.png";
+
 import { FaArrowRight, FaArrowUp } from "react-icons/fa";
 import { FiArrowUpRight, FiArrowUpLeft } from "react-icons/fi";
 import { FaXTwitter, FaInstagram, FaLink } from "react-icons/fa6";
@@ -42,8 +44,13 @@ export default function Home() {
             <a
               key={shop.title}
               className={"group p-3 rounded-md flex justify-between"}
-              style={{ background: shop.color }}
+              style={
+                shop.isAble
+                  ? { background: shop.color }
+                  : { background: "#ddd", pointerEvents: "none" }
+              }
               href={shop.link}
+              target="_blank"
             >
               <div>
                 <h3 className="text-md font-medium mb-1 text-white">
@@ -118,7 +125,10 @@ export default function Home() {
           <h1 className="text-xl font-bold mb-5">Author</h1>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 ">
             <div>
-              <h1 className="text-md">すぎもと組について</h1>
+              <div className="flex flex-row gap-3">
+                <Image src={maru_su} className="w-10 h-auto rounded-full" />
+                <h1 className="text-md my-auto">すぎもと組について</h1>
+              </div>
               <p className="mt-3 text-sm sm:text-base  leading-6">
                 説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト
               </p>
@@ -133,6 +143,7 @@ export default function Home() {
                     <a
                       href={author.link}
                       className="flex flex-row gap-1 border-b border-[var(--font-secondary)]"
+                      target="_blank"
                     >
                       <FaLink className="my-auto text-[var(--font-secondary)]" />
                       {author.name}
