@@ -170,21 +170,18 @@ const shopList = [
     desc: "紙版・電子版",
     link: "https://techbookfest.org/product/7V0Tkg5WKFrgwGHvGgfBjd",
     color: "#67AD5B",
-    isAble: true,
   },
   {
     title: "BOOTH",
-    desc: "電子版のみ",
-    link: "",
+    desc: "紙版・電子版のみ",
+    link: "https://sugi2000.booth.pm/items/5224641",
     color: "#E95B57",
-    isAble: false,
   },
   {
     title: "Amazon",
     desc: "電子版のみ",
     link: "",
     color: "#F7C948",
-    isAble: false,
   },
 ];
 

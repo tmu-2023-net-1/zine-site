@@ -45,7 +45,7 @@ export default function Home() {
               key={shop.title}
               className={"group p-3 rounded-md flex justify-between"}
               style={
-                shop.isAble
+                shop.link !== ""
                   ? { background: shop.color }
                   : { background: "#ddd", pointerEvents: "none" }
               }
