@@ -173,7 +173,7 @@ const shopList = [
   },
   {
     title: "BOOTH",
-    desc: "紙版・電子版のみ",
+    desc: "紙版・電子版",
     link: "https://sugi2000.booth.pm/items/5224641",
     color: "#E95B57",
   },
