@@ -1,13 +1,18 @@
 import Image from "next/image";
 import { workList, mojiList, shopList, authorList } from "@/components/lists";
 
+import fs from "fs";
+
+import { FiArrowUpRight } from "react-icons/fi";
+import { FaLink } from "react-icons/fa6";
+
 import maru_su from "@/public/img/maru_su.png";
 
-import { FaArrowRight, FaArrowUp } from "react-icons/fa";
-import { FiArrowUpRight, FiArrowUpLeft } from "react-icons/fi";
-import { FaXTwitter, FaInstagram, FaLink } from "react-icons/fa6";
+export default function Home(){
+  const sampleFolder = "public/img/sampleImage/";
+  const files = fs.readdirSync(sampleFolder)
+  const samples = files.filter((file) => file.endsWith(".png"));
 
-export default function Home() {
   return (
     <main className="max-w-screen-xl mx-auto px-4 text-base">
       {/* トースター */}
@@ -66,10 +71,49 @@ export default function Home() {
       {/* アバウト */}
       <div className="my-5 grid grid-cols-1 md:grid-cols-2 gap-3 p-7 bg-[var(--bg-secondary)] rounded-xl">
         <h1 className="text-xl font-bold my-auto">About</h1>
-        <div className="">
-          <p className="text-sm sm:text-base leading-6">
-            説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト
+        <div className="text-sm sm:text-base">
+          <p className="leading-6 mb-3">
+            本書は、Webとタイポグラフィをテーマにした20作品をおさめた作品集です。
           </p>
+          <p className="leading-6 mb-3">
+            本書の構成は次の通りです。作品を4つのカテゴリー「もじをあじわう」「もじをたのしむ」 「もじとあそぶ」「もじとおどる」に分類し、セクションごとに作品を1ページずつ紹介しています。
+          </p>
+          <p className="leading-6 mb-3">
+            編集メンバーが制作した作品は、4ページにわたって詳細な解説を加えました。最後に、「もじをかたる」では作品制作を振りかえった座談会を収録しました。
+          </p>
+          <p className="leading-6 mb-3">
+            どの作品も粗削りで発展の余地がありますが、Webとタイポグラフィの可能性を感じるものばかりです。紙面で気になった作品があれば、本Webサイトで観賞していただくこともできます。
+          </p>
+          <div className="my-3">
+            <p>〈こんな方に〉</p>
+            <ul className="list-disc ml-[1rem]">
+              <li>文字やフォントが大好きな方</li>
+              <li>グラフィックデザイン、タイポグラフィに関心のある方</li>
+              <li>個人で作品としてのWebサイトを制作してみたい方</li>
+              <li>実用的なプロダクトではなく、ちょっと変わった創作物を愛している方</li>
+              <li>制作課題に取り組む学生の声をききたい方</li>
+              <li className="list-none">など</li>
+            </ul>
+          </div>
+          <div>
+            <ul className="list-disc ml-[1rem]">
+              <li>A5変形</li>
+              <li>60ページ</li>
+              <li>電子版：本文カラー</li>
+              <li>紙版：本文モノクロ</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      {/* サンプル */}
+      <div className="my-5 p-7 bg-[var(--bg-secondary)] rounded-xl">
+        <h1 className="text-xl font-bold mb-5">Sample</h1>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+          {samples.map((file) => (
+            <div key={file} className="">
+              <Image src={`/img/sampleImage/${file}`} alt={file} width={325} height={325}/>
+            </div>
+          ))}
         </div>
       </div>
       {/* コンテンツ */}
@@ -84,7 +128,7 @@ export default function Home() {
               <h3 className="text-sm w-fit h-fit mb-3 px-3 py-1 text-[var(--bg-primary)] bg-[var(--font-primary)] ">
                 {moji.title}
               </h3>
-              <p className="text-sm sm:text-base  w-full leading-6 md:w-2/3">
+              <p className="text-sm sm:text-base  w-full leading-6 mb-3 md:w-2/3">
                 {moji.desc}
               </p>
               <details>
@@ -129,8 +173,9 @@ export default function Home() {
                 <Image src={maru_su} className="w-10 h-auto rounded-full" />
                 <h1 className="text-md my-auto">すぎもと組について</h1>
               </div>
-              <p className="mt-3 text-sm sm:text-base  leading-6">
-                説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト説明テキスト
+              <p className="mt-5 text-sm sm:text-base  leading-6 mb-3">
+                刊行のたびにメンバーが入れ替わる流浪のテック・ジン醸造所。<br/>
+                主宰者の杉本達應は、東京都立大学システムデザイン学部インダストリアルアート学科の教員です。
               </p>
             </div>
             <div className="text-xs">
