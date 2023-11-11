@@ -180,7 +180,7 @@ const shopList = [
   {
     title: "Amazon",
     desc: "電子版のみ",
-    link: "",
+    link: "https://www.amazon.co.jp/dp/B0CN4BJG72",
     color: "#F7C948",
   },
 ];
